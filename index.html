@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background: black;
+    }
+
+    .section-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      background: black;
+    }
+
+    .score {
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .p1 {
+      color: white;
+      font-size: 32px;
+    }
+
+    .checkbox {
+      padding-bottom: -1px;
+      height: 20px;
+      width: 17px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- code for horizontal navbar using flex -->
+  <div class="navbar">
+
+    <ul class="nav-links">
+      <li><a href="https://krupps.wixsite.com/website">Home</a></li>
+      
+      
+    </ul>
+
+    <section class="section-1">
+      <label class="p1">
+        <input type="checkbox" class="checkbox" value="1">
+        Set the color contrast
+      </label>
+      <br>
+      <label class="p1">
+        <input type="checkbox" class="checkbox" value="2">
+        Add alt tags to image
+      </label>
+      <br>
+      <label class="p1">
+        <input type="checkbox" class="checkbox" value="3">
+        Add play, pause, hide and voice controls to video
+      </label>
+      <br>
+
+      <label class="p1">
+        <input type="checkbox" class="checkbox" value="4">
+        Add play, pause, hide and voice controls to audio
+      </label>
+
+      <br>
+      <label class="p1">
+        <input type="checkbox" class="checkbox" value="5">
+        Properly used the headings and subheadings
+      </label>
+
+      <br>
+      <label class="p1">
+        <input type="checkbox" class="checkbox" value="5">
+        Use link text which reads "Click Here" or something similar
+      </label>
+      <br>
+      <div class="score">Score: 0</div>
+    </section>
+    <script>
+      const checkboxes = document.querySelectorAll('.checkbox');
+      const scoreElement = document.querySelector('.score');
+      let score = 0;
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', (event) => {
+          const value = parseInt(event.target.value);
+          if (event.target.checked) {
+            score += 1;
+          } else {
+            score -= 1;
+          }
+          scoreElement.textContent = `Score: ${score}`;
+        });
+      });
+    </script>
+    <script type="module" src="script.js">
+</body >
+</html >
